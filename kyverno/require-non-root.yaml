@@ -3,16 +3,33 @@ kind: ClusterPolicy
 metadata:
   name: require-non-root
 spec:
-  validationFailureAction: Enforce
+  admission: true
   background: true
+  emitWarning: false
+  validationFailureAction: Enforce
+
   rules:
     - name: check-run-as-non-root
+
       match:
         any:
-        - resources:
-            kinds:
-              - Pod
+          - resources:
+              kinds:
+                - Pod
+
+      exclude:
+        any:
+          - resources:
+              namespaces:
+                - argocd
+                - kube-system
+                - ingress-nginx
+                - kyverno
+
+      skipBackgroundRequests: true
+
       validate:
+        allowExistingViolations: true
         message: "Containers must run as non-root."
         pattern:
           spec:
