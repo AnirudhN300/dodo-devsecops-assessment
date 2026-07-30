@@ -1,0 +1,20 @@
+[1m
+###########################################################
+    testssl       3.2rc3 from [m[1mhttps://testssl.sh/dev/[m
+[1m    ([m[0;37m34c006c 2026-07-30 05:54:40[m[1m)[m
+[1m
+      This program is free software. Distribution and
+             modification under GPLv2 permitted.
+      USAGE w/o ANY WARRANTY. USE IT AT YOUR OWN RISK!
+
+       Please file bugs @ [m[1mhttps://testssl.sh/bugs/[m
+[1m
+###########################################################[m
+
+ Using "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)" [~101 ciphers]
+ on Anirudh:/usr/bin/openssl
+ (built: "Jun  2 19:33:25 2026", platform: "debian-amd64")
+
+
+
+

@@ -1,0 +1,6 @@
+Host                     Score   Grade   Key Findings
+------------------------------------------------------------
+app.dodopayments.tech    91      B       TLS 1.0 and TLS 1.1 enabled
+website.dodopayments.tech 91     B       TLS 1.0/TLS 1.1 enabled, HSTS not offered
+mb.dodopayments.tech     91      B       TLS 1.0 and TLS 1.1 enabled
+sonarqube.dodopayments.tech 91   B       TLS 1.0 and TLS 1.1 enabled
