@@ -1,0 +1,9 @@
+title = "Ledger API"
+
+[[allowlists]]
+description = "Ignore Sealed Secrets"
+
+paths = [
+  '''hardened/sealed-secret.yaml''',
+  '''output/sealedsecret-final.yaml'''
+]
