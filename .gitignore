@@ -17,3 +17,4 @@ venv/
 # Certificates and keys
 *.pem
 *.key
+cosign.key
