@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ledger-api-v1
+  namespace: payments
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: ledger-api
+      version: v1
+
+  template:
+    metadata:
+      labels:
+        app: ledger-api
+        version: v1
+
+    spec:
+      serviceAccountName: ledger-api
+
+      containers:
+      - name: ledger-api
+        image: ledger-api:v1
+        ports:
+        - containerPort: 8080
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ledger-api-v2
+  namespace: payments
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: ledger-api
+      version: v2
+
+  template:
+    metadata:
+      labels:
+        app: ledger-api
+        version: v2
+
+    spec:
+      serviceAccountName: ledger-api
+
+      containers:
+      - name: ledger-api
+        image: ledger-api:v1
+        ports:
+        - containerPort: 8080

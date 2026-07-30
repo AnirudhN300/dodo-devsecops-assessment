@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+
+metadata:
+  name: allow-neighbour-to-ledger
+  namespace: payments
+
+spec:
+
+  podSelector:
+    matchLabels:
+      app: ledger-api
+
+  policyTypes:
+  - Ingress
+
+  ingress:
+
+  - from:
+
+    - podSelector:
+        matchLabels:
+          app: neighbour-api
+
+    ports:
+
+    - protocol: TCP
+      port: 8080

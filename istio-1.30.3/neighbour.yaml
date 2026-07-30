@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: neighbour-api
+  namespace: payments
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: neighbour-api
+
+  template:
+
+    metadata:
+      labels:
+        app: neighbour-api
+
+    spec:
+
+      serviceAccountName: neighbour-sa
+
+      containers:
+      - name: curl
+        image: curlimages/curl
+        command:
+        - sleep
+        - "3600"
